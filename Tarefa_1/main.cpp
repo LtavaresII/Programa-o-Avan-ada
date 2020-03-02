@@ -5,9 +5,15 @@ void Ordenar(int *x, int *y, int*z);
 int main()
 {
     int a = 7, b =6, c = 5;
+
     printf("Antes de Ordenar:\n");
     printf("a = %d, b = %d, c = %d\n", a, b, c);
+
     Ordenar(&a, &b, &c);
+
+    printf("Depois de Ordenar:\n");
+    printf("a = %d, b = %d, c = %d\n", a, b, c);
+
     return 0;
 }
 
@@ -34,7 +40,4 @@ void Ordenar(int *x, int *y, int*z){
         *y = *z;
         *z = tmp;
     }
-
-    printf("Depois de Ordenar:\n");
-    printf("a = %d, b = %d, c = %d\n", *x, *y, *z);
 }
