@@ -1,11 +1,25 @@
 #include "vetor.h"
 #include <cmath>
+#include <iostream>
 
 // Implementção do metodo setX()
 // no ESCOPO da classe Vetor
 
 using namespace std;
 
+//Vetor::Vetor(){
+    //cout << "Contrutor Padrao\n";
+    //x=0; y=0;
+//}
+
+Vetor::Vetor(float mx, float my){
+    cout << "Construtor c/ args\n";
+    x = mx; y = my;
+}
+
+Vetor::~Vetor(){
+    cout << "Destrutor\n";
+}
 void Vetor::setX(float mx){
     x = mx;
 }
@@ -34,10 +48,18 @@ float Vetor::angulo(void){
     return ang;
 }
 
-Vetor Vetor::mult(float a){
-
+Vetor Vetor::multiplica(float a){
+    Vetor ret;
+    ret.x = a*x;
+    ret.y = a*y;
 }
 
-Vetor Vetor::unit(void){
+float Vetor::multiplica(Vetor v){
+    float ret;
+    ret = x*v.x+y*v.y;
+    return ret;
+}
 
+void Vetor::print(){
+    cout<< "(" << x << "," << y << ")\n";
 }
